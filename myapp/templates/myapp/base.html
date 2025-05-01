@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+      {% block title %}
+        base title
+      {% endblock %}
+    </title>
+    <style>
+        body {
+            background-color:rgb(190, 194, 189);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 15px;
+        }
+        footer {
+            text-align: center;
+            margin-top: auto;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Это комментарий! -->
+    {% block body %}
+        base body
+    {% endblock %}
+
+    <footer>
+        <b>&copy; 2025 Все права защищены. Kamaliddin's Project</b>
+    </footer>
+
+
+</body>
+</html>
