@@ -9,11 +9,12 @@
 {% block body %}
 
     <h2>Таблица Products из db.sqlite3</h2>
+
     <ul>
     {% for product in table_of_products %}
         <li>
-            <b>Имя: </b>{{product.name}}, 
-            <b>Цена: </b>{{product.price}}, 
+            <b>Имя: </b>{{product.name}},
+            <b>Цена: </b>{{product.price}},
             <b>Скидка: </b>{% firstof product.discount 'скидки нет' %}
             {% comment %} firstof если переменная положительная то возвращает его, если нет следущий текст {% endcomment %}
         </li>

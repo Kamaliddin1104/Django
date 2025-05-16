@@ -1,0 +1,25 @@
+{% extends "myapp/base.html" %}
+
+
+{% block title %} Orders DB {% endblock %}
+
+
+{% block body %}
+
+    <div><h1>Orders DB</h1></div>
+    <br>
+
+    <div>
+        {% if orders %}
+            {% for order in orders %}
+                <b>{{order}}</b>
+            {% endfor %}
+        {% else %}
+            <p>DB orders is empty.</p>
+        {% endif %}
+
+    </div>
+
+
+
+{% endblock %}

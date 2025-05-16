@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.contrib.auth.models import Group
 from datetime import datetime
-from .models import Product
+from .models import Product, Orders
 
 
 def myapp_page(request: HttpRequest):
@@ -17,7 +17,7 @@ def myapp_page(request: HttpRequest):
 
 def groups_list_page(request: HttpRequest):
     context = {
-        'groups': Group.objects.prefetch_related('permissions').all(),
+        'groups': Group.objects.prefetch_related('permissions').all(), # prefetch_related - надо узнать, что это
     }
     return render(request, 'myapp/groups_list.html', context=context)
 
@@ -32,6 +32,11 @@ def products_page(request: HttpRequest):
 
 
 
+def orders(request: HttpRequest):
+    context = {
+        'orders': Orders.objects.select_related("user").all(), # select_related - надо узнать, что это
+    }
+    return render(request, 'myapp/orders_db.html', context=context)
 
 
 
